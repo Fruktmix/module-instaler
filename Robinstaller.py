@@ -1,5 +1,5 @@
 import os
-import tkinter as tk
+import tkinter as tk #tk ist för * för att tydlig göra 
 
 root= tk.Tk()
 
@@ -25,13 +25,23 @@ def uninstallPackage ():
     uninstallPythonPackage = 'pip uninstall ' + entry1.get()
     
     os.system('start cmd /k ' + uninstallPythonPackage)
+    
+def ShowPackage ():
+    global ShowPythonPackage
+    #TEMP = str(help('Modules')
+    #ShowPythonPackage = 'TEMP'
+    (help('modules'))      
+    
+    #os.system('start cmd /k ' + ShowPythonPackage)
 
     
 button1 = tk.Button(text='      Install Package    ', command=installPackage, bg='green', fg='white', font=('helvetica', 12, 'bold'))
 canvas1.create_window(150, 180, window=button1)
 
-
 button2 = tk.Button(text='   Uninstall Package  ', command=uninstallPackage, bg='coral3', fg='white', font=('helvetica', 12, 'bold'))
 canvas1.create_window(150, 230, window=button2)
+
+button3 = tk.Button(text='   Show Package  ', command=ShowPackage, bg='blue', fg='white', font=('helvetica', 12, 'bold'))
+canvas1.create_window(150, 230, window=button3)
 
 root.mainloop()
